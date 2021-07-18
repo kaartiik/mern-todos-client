@@ -14,7 +14,7 @@ function App() {
         : { title: '', content: '' };
 
     setTodo(currentTodo);
-  }, [currentId]);
+  }, [currentId, todos]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -69,7 +69,6 @@ function App() {
       <div className="row">
         <form className="col s12" onSubmit={onSubmitHandler}>
           <div className="row">
-            <pre>{JSON.stringify(todo)}</pre>
             <div className="input-field col s6">
               <i className="material-icons prefix">title</i>
               <input
