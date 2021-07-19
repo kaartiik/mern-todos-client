@@ -56,12 +56,9 @@ function App() {
 
   const removeTodo = async (id) => {
     await deleteTodo(id);
-    const todosCopy = [...todos];
-    const filteredTodos = todosCopy.filter((todo) => todo._id !== id);
-
-    console.log('filteredTodos', filteredTodos);
-
-    setTodos(filteredTodos);
+    clear();
+    const result = await readTodos();
+    setTodos(result);
   };
 
   return (

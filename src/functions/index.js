@@ -29,7 +29,8 @@ export const updateTodo = async (id, todo) => {
 
 export const deleteTodo = async (id) => {
   try {
-    await api.deleteTodo(id);
+    const { data } = await api.deleteTodo(id);
+    alert(data.message);
   } catch (error) {
     console.log(error);
   }
